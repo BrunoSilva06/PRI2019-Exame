@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    .w3-container
+        h1= lista.numero  
+        table.w3-table-all
+            tr
+                th Data
+                th Sumario
+                th Link
+                th Estado
+                th Entidades
+                tr
+                    td= lista.data
+                    td= lista.sumario
+                    td= lista.link
+                    td= lista.estado
+                    td= lista.entidades
+
+                    tr
+                        th Codigo do Processo
+                        th Titulo do Processo
+                            each pro in processos
+                                tr
+                                    td=pro.codigo
+                                    td=pro.titulo
+                                        th Link do Processo
+                                            a(href='/legislacao/' + lista.id + '/processos')= '  Página do processo'
+
+        a(href="http://localhost:4080/") Menu principal
